@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.loginfragment.R;
-import com.example.loginfragment.Login.SignUpDirections;
 
 
 public class SignUp extends Fragment {
@@ -41,7 +40,7 @@ public class SignUp extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button btn_sign_up = view.findViewById(R.id.btn_sign_up);
+        Button btn_sign_up = view.findViewById(R.id.btn_update);
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

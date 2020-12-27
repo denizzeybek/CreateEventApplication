@@ -50,7 +50,13 @@ public class SignIn extends Fragment {
             }
         });
 
-
+        TextView forgot_password = view.findViewById(R.id.forgot_password);
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                newPassword(view);
+            }
+        });
 
 
         TextView go_signup_text = view.findViewById(R.id.goto_signup);
@@ -72,6 +78,11 @@ public class SignIn extends Fragment {
 
         Intent intent = new Intent(getActivity(), MainActivity2.class);
         startActivity(intent);
+    }
+
+    public void newPassword(View view){
+        NavDirections action = SignInDirections.actionSignInToForgotPassword();
+        Navigation.findNavController(view).navigate(action);
     }
     //TODO: Şifremi unuttum a basınca yeni sayfaya geçmesi gerekiyor
 

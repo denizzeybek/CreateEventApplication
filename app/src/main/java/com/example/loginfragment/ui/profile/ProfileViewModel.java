@@ -17,3 +17,5 @@ public class ProfileViewModel extends ViewModel {
         return mText;
     }
 }
+
+//TODO: veri tabanı işlemleri vievmodel de dönecek

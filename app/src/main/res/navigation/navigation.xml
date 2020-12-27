@@ -12,8 +12,10 @@
         tools:layout="@layout/fragment_sign_in" >
         <action
             android:id="@+id/action_signIn_to_signUp"
-            app:destination="@id/signUp"
-            app:enterAnim="@android:anim/slide_out_right" />
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_signIn_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
     </fragment>
     <fragment
         android:id="@+id/signUp"
@@ -22,7 +24,15 @@
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUp_to_signIn"
-            app:destination="@id/signIn"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.example.loginfragment.Login.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_signIn"
+            app:destination="@id/signIn" />
     </fragment>
 </navigation>
