@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.SignIn">
+
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginBottom="40dp"
+        android:text="Hesaba Giriş Yap"
+        android:textAlignment="center"
+        android:textColor="#040303"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/EmailText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EmailText"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="324dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/headerText"
+        app:layout_constraintTop_toBottomOf="@+id/headerText" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailText" />
+
+    <Button
+        android:id="@+id/btn_signin"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:text="Giriş Yap"
+        android:layout_marginTop="15dp"
+        android:onClick="goToMainPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:text="Şifremi Unuttum"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signin" />
+
+    <TextView
+        android:id="@+id/haveAccount"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:text="Hesabınız yok mu? Hemen"
+        android:textAlignment="viewStart"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
+
+    <TextView
+        android:id="@+id/goto_signup"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:text="Kayıt Olun"
+        android:clickable="true"
+        android:onClick="goToSignUpPage"
+        android:textColor="#2196F3"
+        android:layout_marginTop="5dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/haveAccount" />
+</androidx.constraintlayout.widget.ConstraintLayout>
