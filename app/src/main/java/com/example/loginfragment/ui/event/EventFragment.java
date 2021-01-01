@@ -26,6 +26,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -34,10 +36,25 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.loginfragment.Login.SignInDirections;
 import com.example.loginfragment.Login.SignUpDirections;
 import com.example.loginfragment.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageException;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -48,11 +65,15 @@ public class EventFragment extends Fragment {
     EditText locationText;
     EditText eventDateText;
     EditText conditionsText;
+    EditText contactText;
     Button btn_create_event;
-
     Uri imageData;
     Bitmap selectedImage;
     ImageView imageView;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
 
     public EventFragment() {
         // Required empty public constructor
@@ -77,13 +98,26 @@ public class EventFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        firebaseStorage = FirebaseStorage.getInstance();
+        storageReference = firebaseStorage.getReference();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
         eventNameText = view.findViewById(R.id.eventNameText);
         detailsText = view.findViewById(R.id.detailsText);
         locationText = view.findViewById(R.id.locationText);
         eventDateText = view.findViewById(R.id.eventDateText);
         conditionsText = view.findViewById(R.id.conditionsText);
+        contactText = view.findViewById(R.id.contactText);
 
         btn_create_event = view.findViewById(R.id.btn_create_event);
+        btn_create_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createEvent(view);
+            }
+        });
+
 
         imageView = view.findViewById(R.id.uploadImage);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +128,73 @@ public class EventFragment extends Fragment {
         });
     }
 
+    public void createEvent(final View view) {
+
+        if (imageData != null) {
+            //universal unique id
+            UUID uuid = UUID.randomUUID();
+            final String imageName = "images/" + uuid + ".jpg";
+
+            storageReference.child(imageName).putFile(imageData).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    //Download URL
+
+                    StorageReference newReference = FirebaseStorage.getInstance().getReference(imageName);
+                    newReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+
+                            String downloadUrl = uri.toString();
+
+                            FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                            String userEmail = firebaseUser.getEmail();
+
+                            //TODO:burda uygulamayı oluşturan kullanıcıya ait userEmail dışında bazı bilgiler de alınıp db ye yollanmalı mı??
+                            String eventName = eventNameText.getText().toString();
+                            String details = detailsText.getText().toString();
+                            String location = locationText.getText().toString();
+                            String eventDate = eventDateText.getText().toString();
+                            String conditions = conditionsText.getText().toString();
+                            String contact = contactText.getText().toString();
+
+                            HashMap<String, Object> postData = new HashMap<>();
+                            postData.put("eventName",eventName);
+                            postData.put("details",details);
+                            postData.put("location",location);
+                            postData.put("eventDate",eventDate);
+                            postData.put("conditions",conditions);
+                            postData.put("contact",contact);
+                            postData.put("downloadurl",downloadUrl);
+                            postData.put("userEmail",userEmail);
+                            postData.put("date", FieldValue.serverTimestamp());
+
+                            firebaseFirestore.collection("Events").add(postData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(getContext(),"Event Eklendi!", Toast.LENGTH_SHORT).show();
+                                    /*NavDirections action = SignInDirections.actionSignInToForgotPassword();
+                                    Navigation.findNavController(view).navigate(action);*/
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getContext(),e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                    });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getContext(),e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
 
     public void selectImage(View view){
         if (ContextCompat.checkSelfPermission(view.getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {

@@ -1,95 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F6F6"
-    tools:context=".ui.event.EventFragment">
+    android:layout_marginBottom="10dp"
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/uploadImage"
-        android:layout_width="106dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="50dp"
-        android:background="#D3D1D1"
-        android:contentDescription="TODO"
-        android:clickable="true"
-        android:onClick="selectImage"
-        android:src="@android:drawable/ic_menu_upload_you_tube"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        tools:context=".ui.event.EventFragment">
 
-    <EditText
-        android:id="@+id/eventNameText"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Etkinlik Adı"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uploadImage" />
+        <ImageView
+            android:id="@+id/uploadImage"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:contentDescription="TODO"
+            android:onClick="selectImage"
+            android:src="@android:drawable/ic_menu_upload_you_tube"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/detailsText"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Açıklama"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventNameText" />
+        <EditText
+            android:id="@+id/eventNameText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Etkinlik Adı"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadImage" />
 
-    <EditText
-        android:id="@+id/locationText"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Konum Bilgileri"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailsText" />
+        <EditText
+            android:id="@+id/detailsText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Açıklama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventNameText" />
 
-    <EditText
-        android:id="@+id/eventDateText"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="datetime"
-        android:hint="Etkinlik Tarihi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationText" />
+        <EditText
+            android:id="@+id/locationText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Konum Bilgileri"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailsText" />
 
-    <EditText
-        android:id="@+id/conditionsText"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Şartlar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventDateText" />
+        <EditText
+            android:id="@+id/eventDateText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="datetime"
+            android:hint="Etkinlik Tarihi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationText" />
 
-    <Button
-        android:id="@+id/btn_create_event"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:text="Etkinliği Oluştur"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conditionsText" />
+        <EditText
+            android:id="@+id/conditionsText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Şartlar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventDateText" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/contactText"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="İletişim Bilgileri"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conditionsText" />
+
+        <Button
+            android:id="@+id/btn_create_event"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:text="Etkinliği Oluştur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -101,6 +101,7 @@ public class SignUp extends Fragment {
                 Toast.makeText(getContext(), "Kullanıcı Oluşturuldu!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), MainActivity2.class);
                 startActivity(intent);
+                getActivity().finish();
 
             }
         }).addOnFailureListener(new OnFailureListener() {

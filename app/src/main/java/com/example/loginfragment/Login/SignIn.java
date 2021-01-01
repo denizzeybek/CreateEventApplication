@@ -111,6 +111,7 @@ public class SignIn extends Fragment {
             public void onSuccess(AuthResult authResult) {
                 Intent intent = new Intent(getActivity(), MainActivity2.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
