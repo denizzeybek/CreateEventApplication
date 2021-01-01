@@ -22,7 +22,7 @@ public class SignUp extends Fragment {
     EditText EmailText;
     EditText NameText;
     EditText PasswordText;
-    EditText RepeatPasswordText;
+    EditText PhoneNumberText;
     Button btn_sign_up;
 
     public SignUp() {
@@ -50,7 +50,7 @@ public class SignUp extends Fragment {
         EmailText = view.findViewById(R.id.EmailText);
         NameText = view.findViewById(R.id.NameText);
         PasswordText = view.findViewById(R.id.PasswordText);
-        RepeatPasswordText = view.findViewById(R.id.RepeatPasswordText);
+        PhoneNumberText = view.findViewById(R.id.PhoneNumberText);
 
         btn_sign_up = view.findViewById(R.id.btn_sign_up);
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
