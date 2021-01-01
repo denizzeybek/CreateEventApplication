@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.loginfragment.MainActivity2;
@@ -20,6 +21,11 @@ import com.example.loginfragment.R;
 
 
 public class SignIn extends Fragment {
+    EditText EmailText;
+    EditText PasswordText;
+    Button btn_signin;
+    TextView forgot_password;
+    TextView go_signup_text;
 
     public SignIn() {
         // Required empty public constructor
@@ -42,7 +48,10 @@ public class SignIn extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button btn_signin = view.findViewById(R.id.btn_signin);
+        EmailText = view.findViewById(R.id.EmailText);
+        PasswordText = view.findViewById(R.id.PasswordText);
+
+        btn_signin = view.findViewById(R.id.btn_signin);
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +59,7 @@ public class SignIn extends Fragment {
             }
         });
 
-        TextView forgot_password = view.findViewById(R.id.forgot_password);
+        forgot_password = view.findViewById(R.id.forgot_password);
         forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +68,7 @@ public class SignIn extends Fragment {
         });
 
 
-        TextView go_signup_text = view.findViewById(R.id.goto_signup);
+        go_signup_text = view.findViewById(R.id.goto_signup);
         go_signup_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +93,7 @@ public class SignIn extends Fragment {
         NavDirections action = SignInDirections.actionSignInToForgotPassword();
         Navigation.findNavController(view).navigate(action);
     }
-    //TODO: Şifremi unuttum a basınca yeni sayfaya geçmesi gerekiyor
+
 
 
 }

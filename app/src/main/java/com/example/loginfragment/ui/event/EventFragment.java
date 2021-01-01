@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -42,6 +43,13 @@ import static android.app.Activity.RESULT_OK;
 
 public class EventFragment extends Fragment {
 
+    EditText eventNameText;
+    EditText detailsText;
+    EditText locationText;
+    EditText eventDateText;
+    EditText conditionsText;
+    Button btn_create_event;
+
     Uri imageData;
     Bitmap selectedImage;
     ImageView imageView;
@@ -68,6 +76,14 @@ public class EventFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        eventNameText = view.findViewById(R.id.eventNameText);
+        detailsText = view.findViewById(R.id.detailsText);
+        locationText = view.findViewById(R.id.locationText);
+        eventDateText = view.findViewById(R.id.eventDateText);
+        conditionsText = view.findViewById(R.id.conditionsText);
+
+        btn_create_event = view.findViewById(R.id.btn_create_event);
 
         imageView = view.findViewById(R.id.uploadImage);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -127,3 +143,5 @@ public class EventFragment extends Fragment {
 
 
 }
+
+//TODO: seçtiğin resmin boyutlandırmasını yapman gerekiyor

@@ -42,3 +42,5 @@ public class ProfileFragment extends Fragment {
         textView.setText("This is profile page");
     }
 }
+
+//TODO: telefon numarasını da vermesi gerekiyor

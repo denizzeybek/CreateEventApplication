@@ -12,11 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.loginfragment.R;
 
 
 public class SignUp extends Fragment {
+
+    EditText EmailText;
+    EditText NameText;
+    EditText PasswordText;
+    EditText RepeatPasswordText;
+    Button btn_sign_up;
 
     public SignUp() {
         // Required empty public constructor
@@ -40,19 +47,26 @@ public class SignUp extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button btn_sign_up = view.findViewById(R.id.btn_sign_up);
+        EmailText = view.findViewById(R.id.EmailText);
+        NameText = view.findViewById(R.id.NameText);
+        PasswordText = view.findViewById(R.id.PasswordText);
+        RepeatPasswordText = view.findViewById(R.id.RepeatPasswordText);
+
+        btn_sign_up = view.findViewById(R.id.btn_sign_up);
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToSignUpPage(view);
+                goToSignInPage(view);
             }
         });
     }
 
-    public void goToSignUpPage(View view){
+    public void goToSignInPage(View view){
 
         NavDirections action = SignUpDirections.actionSignUpToSignIn();
         Navigation.findNavController(view).navigate(action);
 
     }
 }
+
+//TODO: telefon numarasını da vermesi gerekiyor

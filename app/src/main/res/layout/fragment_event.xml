@@ -12,7 +12,7 @@
         android:layout_width="106dp"
         android:layout_height="109dp"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:background="#D3D1D1"
         android:contentDescription="TODO"
         android:clickable="true"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/locationText" />
 
     <EditText
-        android:id="@+id/condisionsText"
+        android:id="@+id/conditionsText"
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -90,6 +90,6 @@
         android:text="Etkinliği Oluştur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/condisionsText" />
+        app:layout_constraintTop_toBottomOf="@+id/conditionsText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

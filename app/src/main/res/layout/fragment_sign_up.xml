@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/EmailText" />
 
     <EditText
-        android:id="@+id/enterPassword"
+        android:id="@+id/PasswordText"
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/NameText" />
 
     <EditText
-        android:id="@+id/repeatPassword"
+        android:id="@+id/RepeatPasswordText"
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -81,7 +81,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordText" />
 
     <Button
         android:id="@+id/btn_sign_up"
@@ -92,6 +92,9 @@
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeatPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/RepeatPasswordText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--TODO: telefon numarasını da vermesi gerekiyor-->
