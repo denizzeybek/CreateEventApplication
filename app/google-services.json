@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101682620310",
+    "project_id": "createeventapplication-7d2b0",
+    "storage_bucket": "createeventapplication-7d2b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101682620310:android:e8853214b6f45949cadfb7",
+        "android_client_info": {
+          "package_name": "com.example.loginfragment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101682620310-908g9o3brthi57u2ijs95424m0q51rpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxSUq9KEndHmpTWbfeV2w2pDlGAHg8Rr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101682620310-908g9o3brthi57u2ijs95424m0q51rpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
