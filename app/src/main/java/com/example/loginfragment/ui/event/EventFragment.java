@@ -151,7 +151,7 @@ public class EventFragment extends Fragment {
                             FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                             String userEmail = firebaseUser.getEmail();
 
-                            //TODO:burda uygulamayı oluşturan kullanıcıya ait userEmail dışında bazı bilgiler de alınıp db ye yollanmalı mı??
+                            //TODO:burda uygulamayı oluşturan kullanıcıya ait userEmail dışında etkinliği oluşturan kişinin adını da eklemem gerekir.
                             String eventName = eventNameText.getText().toString();
                             String details = detailsText.getText().toString();
                             String location = locationText.getText().toString();
