@@ -108,4 +108,7 @@ public class NotificationsFragment extends Fragment {
     }
 }
 
-//TODO:userImage işlemleri yapılacak.
+//TODO: !! notifications da bildirimlerin sadece etkinliği oluşturan kullanıcıya gitmesi gerekiyor.
+//TODO: kabul et, reddet butonlarına işlev eklenecek
+//TODO: eğer kabul ederse diğer kullanıcıya bildirim gidecek??
+//TODO: userName DB ye eklendikten sonra bildirimler sayfasında email yerine username gözükecek

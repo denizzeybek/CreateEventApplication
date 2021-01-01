@@ -115,5 +115,3 @@ public class SignUp extends Fragment {
 
     }
 }
-
-//TODO: telefon numarasını da vermesi gerekiyor

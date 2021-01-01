@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context=".ui.profile.ProfileFragment">
 
+
+    <ImageView
+        android:id="@+id/uploadImage"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:src="@drawable/ic_account_circle"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:onClick="selectImage"
+        android:layout_marginBottom="15dp"/>
+
     <TextView
-        android:id="@+id/text_profile"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:text="Kişisel Bilgiler"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:paddingLeft="10dp"
+        android:textSize="24dp"/>
 
-    <!--TODO: telefon numarasını da vermesi gerekiyor-->
+    <EditText
+        android:id="@+id/editNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editPhoneNumberText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingStart="15dp"
+        android:inputType="phone"
+        android:layout_marginBottom="15dp"
+        android:text="Phone Number" />
+
+    <EditText
+        android:id="@+id/editPasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingStart="15dp"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="15dp"
+        android:text="Password" />
+
+    <Button
+        android:id="@+id/btn_update_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Bilgileri Güncelle"
+        android:textAlignment="center"  />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:text="Çıkış Yap"
+        android:textColor="#2196F3"
+        android:textSize="20dp"/>
+</LinearLayout>
+
