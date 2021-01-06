@@ -9,7 +9,24 @@
         android:id="@+id/navigation_home"
         android:name="com.example.loginfragment.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_home_click"
+            app:destination="@id/navigation_home_click" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home_click"
+        android:name="com.example.loginfragment.ui.home.ClickedHomeFragment"
+        android:label="@string/title_home_click"
+        tools:layout="@layout/fragment_home_click" >
+        <action
+            android:id="@+id/action_navigation_home_click_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <argument
+            android:name="key"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_event"

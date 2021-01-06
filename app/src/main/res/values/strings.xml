@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment2">Hello blank fragment</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_home">Ana Sayfa</string>
+    <string name="title_home_click">Ana Sayfa</string>
     <string name="title_event">Yeni Ekle</string>
     <string name="title_profile">Profil</string>
     <string name="title_notifications">Bildirimler</string>

@@ -118,7 +118,6 @@ public class EventFragment extends Fragment {
             }
         });
 
-
         imageView = view.findViewById(R.id.uploadImage);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

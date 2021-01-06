@@ -1,5 +1,6 @@
 package com.example.loginfragment.ui.home;
 
+import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginfragment.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapter.PostHolder> {
 
@@ -43,6 +47,27 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         holder.eventNameText.setText(eventNameList.get(position));
         holder.locationText.setText(eventLocationList.get(position));
         Picasso.get().load(eventImageList.get(position)).into(holder.imageView);
+
+        // click denemese
+        //action_navigation_home_to_homeClickFragment
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToHomeClickFragment(view);
+            }
+        });
+    }
+
+    public void goToHomeClickFragment(View view){
+        // NavDirections action = ForgotPasswordDirections.actionForgotPasswordToSignIn();
+        //Navigation.findNavController(view).navigate(action); riyi çekerken eğer gelen key ile fb deki key eşleşiyorsa veriyi çek
+        String key = UUID.randomUUID().toString();
+        System.out.println("home fragment key : " + key);
+        //NavDirections action = HomeFragmentDirections.actionNavigationHomeToNavigationHomeClick();
+        HomeFragmentDirections.ActionNavigationHomeToNavigationHomeClick action = HomeFragmentDirections.actionNavigationHomeToNavigationHomeClick();
+        action.setKey(key);
+        Navigation.findNavController(view).navigate(action);
     }
 
     @Override
