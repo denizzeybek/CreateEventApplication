@@ -62,4 +62,4 @@ public class ClickedHomeFragment extends Fragment {
     }
 }
 
-
+//TODO: key i karşılaman gerekiyor.
