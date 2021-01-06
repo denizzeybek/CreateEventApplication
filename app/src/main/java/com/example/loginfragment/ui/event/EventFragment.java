@@ -176,6 +176,13 @@ public class EventFragment extends Fragment {
                                     Toast.makeText(getContext(),"Event Eklendi!", Toast.LENGTH_SHORT).show();
                                     /*NavDirections action = SignInDirections.actionSignInToForgotPassword();
                                     Navigation.findNavController(view).navigate(action);*/
+                                    eventNameText.setText("");
+                                    detailsText.setText("");
+                                    locationText.setText("");
+                                    eventDateText.setText("");
+                                    conditionsText.setText("");
+                                    contactText.setText("");
+                                    imageView.setImageDrawable(ContextCompat.getDrawable(getContext(),R.drawable.ic_menu_upload_you_tube));
 
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
