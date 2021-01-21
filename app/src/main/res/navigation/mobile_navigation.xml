@@ -23,9 +23,9 @@
             android:id="@+id/action_navigation_home_click_to_navigation_home"
             app:destination="@id/navigation_home" />
         <argument
-            android:name="key"
-            app:argType="string"
-            android:defaultValue="null" />
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 
     <fragment

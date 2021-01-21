@@ -1,19 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_marginBottom="10dp"
     android:layout_height="match_parent">
 
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="322dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="196dp"
-        android:text="basardın"
+        android:id="@+id/EventNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="EventName"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:text=""
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/EventCreatorText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="EventCreator"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:layout_editor_absoluteX="140dp" />
+    <ImageView
+        android:id="@+id/EventImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_calendar_foreground"
+        android:layout_marginTop="15dp"  />
+
+    <TextView
+        android:id="@+id/EventLocationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="EventLocation"
+        android:textSize="24sp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/InfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
+        android:text="Etkinlik Hakkında Bilgiler"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/EventDateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="EventDate"
+        android:textSize="24sp"
+        android:paddingLeft="10dp" />
+    <TextView
+        android:id="@+id/EventDetailsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="EventDetails"
+        android:textSize="24sp"
+        android:paddingLeft="10dp" />
+
+    <Button
+        android:id="@+id/JoinButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Katıl"
+        android:textSize="24dp"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>
+</ScrollView>

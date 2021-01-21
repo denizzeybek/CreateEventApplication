@@ -42,7 +42,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PostHolder holder, final int position) {
 
         holder.eventNameText.setText(eventNameList.get(position));
         holder.locationText.setText(eventLocationList.get(position));
@@ -54,19 +54,15 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToHomeClickFragment(view);
+                goToHomeClickFragment(view, position);
             }
         });
     }
 
-    public void goToHomeClickFragment(View view){
-        // NavDirections action = ForgotPasswordDirections.actionForgotPasswordToSignIn();
-        //Navigation.findNavController(view).navigate(action); riyi çekerken eğer gelen key ile fb deki key eşleşiyorsa veriyi çek
-        String key = UUID.randomUUID().toString();
-        System.out.println("home fragment key : " + key);
-        //NavDirections action = HomeFragmentDirections.actionNavigationHomeToNavigationHomeClick();
+    public void goToHomeClickFragment(View view, final int position){
+
         HomeFragmentDirections.ActionNavigationHomeToNavigationHomeClick action = HomeFragmentDirections.actionNavigationHomeToNavigationHomeClick();
-        action.setKey(key);
+        action.setPosition(position);
         Navigation.findNavController(view).navigate(action);
     }
 

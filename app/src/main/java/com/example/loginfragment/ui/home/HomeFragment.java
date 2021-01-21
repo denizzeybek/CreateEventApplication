@@ -117,5 +117,5 @@ public class HomeFragment extends Fragment {
 
 }
 
-//TODO: tıklama işlemi yapılacak
+
 //TODO: bir tane sıralama yapmak için menu eklenecek
