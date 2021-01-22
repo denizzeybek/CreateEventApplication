@@ -1,6 +1,7 @@
 package com.example.loginfragment.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginfragment.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,6 +33,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import static android.content.ContentValues.TAG;
 
 public class ClickedHomeFragment extends Fragment {
     TextView EventNameText;
@@ -48,6 +54,7 @@ public class ClickedHomeFragment extends Fragment {
     ArrayList<String> eventDateFromFB;
     ArrayList<String> eventDetailsFromFB;
     int position;
+    CollectionReference collectionReference;
 
 
 
@@ -70,7 +77,7 @@ public class ClickedHomeFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         EventNameText = view.findViewById(R.id.EventNameText);
@@ -96,11 +103,18 @@ public class ClickedHomeFragment extends Fragment {
         if( getArguments() != null){
             position = ClickedHomeFragmentArgs.fromBundle(getArguments()).getPosition();
         }
+
+        BtnJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                joinEvent(view);
+            }
+        });
     }
 
     public void getDataFromFirestore() {
 
-        CollectionReference collectionReference = firebaseFirestore.collection("Events");
+        collectionReference = firebaseFirestore.collection("Events");
 
         collectionReference.orderBy("date", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -148,7 +162,29 @@ public class ClickedHomeFragment extends Fragment {
 
 
     }
+
+    public void joinEvent(View view){
+        String id = collectionReference.getId();
+        DocumentReference washingtonRef = firebaseFirestore.collection("Events").document(id);
+        System.out.println("washingtonRef :" + washingtonRef);
+// Set the "isCapital" field of the city 'DC'
+        washingtonRef
+                .update("isAccepted", true)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getContext(),"Katıl isteği yollandı", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"Başarısız", Toast.LENGTH_LONG).show();
+                        System.out.println("hata : " + e);
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+    }
 }
 
 
-//TODO: navigations arası iletişimde arraylist i almaya çalışacaksın!!!

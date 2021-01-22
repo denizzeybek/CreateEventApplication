@@ -33,8 +33,9 @@ public class NotificationsFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
     ArrayList<String> userEmailFromFB;
+    ArrayList<String> eventNameFromFB;
     FeedRecyclerAdapter2 feedRecyclerAdapter;
-    //ArrayList<String> userImageFromFB;
+    ArrayList<String> userImageFromFB;
     public NotificationsFragment() {
         // Required empty public constructor
     }
@@ -57,6 +58,8 @@ public class NotificationsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         userEmailFromFB = new ArrayList<>();
+        eventNameFromFB = new ArrayList<>();
+        userImageFromFB = new ArrayList<>();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         getDataFromFirestore();
@@ -66,7 +69,7 @@ public class NotificationsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //firebase den çekeceğin arraylist bilgileri
-        feedRecyclerAdapter = new FeedRecyclerAdapter2(userEmailFromFB);
+        feedRecyclerAdapter = new FeedRecyclerAdapter2(userEmailFromFB,eventNameFromFB, userImageFromFB);
 
         recyclerView.setAdapter(feedRecyclerAdapter);
     }
@@ -91,10 +94,12 @@ public class NotificationsFragment extends Fragment {
 
                         //Casting
                         String userEmail = (String) data.get("userEmail");
-                        //String downloadUrl = (String) data.get("downloadurl");
+                        String eventName = (String) data.get("eventName");
+                        String downloadUrl = (String) data.get("downloadurl");
 
                         userEmailFromFB.add(userEmail);
-                        //userImageFromFB.add(downloadUrl);
+                        eventNameFromFB.add(eventName);
+                        userImageFromFB.add(downloadUrl);
                         feedRecyclerAdapter.notifyDataSetChanged();
                     }
 

@@ -158,6 +158,9 @@ public class EventFragment extends Fragment {
                             String conditions = conditionsText.getText().toString();
                             String contact = contactText.getText().toString();
 
+                            Boolean isSendInvite = false;
+                            Boolean isAccepted = null;
+
                             HashMap<String, Object> postData = new HashMap<>();
                             postData.put("eventName",eventName);
                             postData.put("details",details);
@@ -168,6 +171,9 @@ public class EventFragment extends Fragment {
                             postData.put("downloadurl",downloadUrl);
                             postData.put("userEmail",userEmail);
                             postData.put("date", FieldValue.serverTimestamp());
+
+                            postData.put("isSendInvite",isSendInvite);
+                            postData.put("isAccepted",isAccepted);
 
                             firebaseFirestore.collection("Events").add(postData).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override

@@ -26,17 +26,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userImage"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <TextView
+        android:id="@+id/eventNameText"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textSize="20dp"
+        android:text="eventName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userImage"
+        app:layout_constraintTop_toBottomOf="@+id/userEmailText" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="273dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:textSize="20dp"
-        android:text="etkinliğinize katılmak istiyor"
+        android:text="etkinliğine katılmak istiyor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userImage"
-        app:layout_constraintTop_toBottomOf="@+id/userEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/eventNameText" />
 
     <Button
         android:id="@+id/button"

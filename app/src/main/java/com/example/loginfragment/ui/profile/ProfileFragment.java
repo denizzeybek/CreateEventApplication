@@ -115,3 +115,4 @@ public class ProfileFragment extends Fragment {
 
 //TODO: veritabanına image dahil verilerin kaydedilmesi, güncellenmesi gerekiyor.
 //TODO: çıkış yap butonuna işlev verilecek, mainactivity ye gidilecek.
+//TODO: text olarak authenticate olan user ın email i de yaz kim olduğu belli olsun.
