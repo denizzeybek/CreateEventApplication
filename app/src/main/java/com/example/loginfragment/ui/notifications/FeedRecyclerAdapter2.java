@@ -3,8 +3,10 @@ package com.example.loginfragment.ui.notifications;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +40,18 @@ public class FeedRecyclerAdapter2 extends RecyclerView.Adapter<FeedRecyclerAdapt
         holder.userEmailText.setText(userEmailList.get(position));
         holder.eventNameText.setText(eventNameList.get(position));
         Picasso.get().load(eventImageList.get(position)).into(holder.userImage);
+        holder.btnAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "Talep Onaylandı !!", Toast.LENGTH_LONG).show();
+            }
+        });
+        holder.btnDecline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "Talep Reddedildi !!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
     @Override
     public int getItemCount() {
@@ -50,7 +64,8 @@ public class FeedRecyclerAdapter2 extends RecyclerView.Adapter<FeedRecyclerAdapt
         TextView userEmailText;
         TextView eventNameText;
         ImageView userImage;
-
+        Button btnAccept;
+        Button btnDecline;
         public Holder(@NonNull View itemView) {
             super(itemView);
 
@@ -58,6 +73,8 @@ public class FeedRecyclerAdapter2 extends RecyclerView.Adapter<FeedRecyclerAdapt
             userEmailText = itemView.findViewById(R.id.userEmailText);
             eventNameText = itemView.findViewById(R.id.eventNameText);
             userImage = itemView.findViewById(R.id.userImage);
+            btnAccept = itemView.findViewById(R.id.btn_accept);
+            btnDecline = itemView.findViewById(R.id.btn_decline);
         }
     }
 }

@@ -164,6 +164,7 @@ public class ClickedHomeFragment extends Fragment {
     }
 
     public void joinEvent(View view){
+        Toast.makeText(getContext(),"Katılma talebi yollandı", Toast.LENGTH_LONG).show();
         String id = collectionReference.getId();
         DocumentReference washingtonRef = firebaseFirestore.collection("Events").document(id);
         System.out.println("washingtonRef :" + washingtonRef);
