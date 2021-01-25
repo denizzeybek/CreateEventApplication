@@ -80,4 +80,3 @@ public class FeedRecyclerAdapter2 extends RecyclerView.Adapter<FeedRecyclerAdapt
         }
     }
 }
-//TODO:profileImage ayarlanacak.

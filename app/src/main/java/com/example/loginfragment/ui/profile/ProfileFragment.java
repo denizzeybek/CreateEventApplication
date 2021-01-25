@@ -270,5 +270,3 @@ public class ProfileFragment extends Fragment {
 
 }
 
-//TODO: veritabanına image dahil verilerin kaydedilmesi, güncellenmesi gerekiyor. (HALF DONE)
-//TODO: çıkış yap butonuna işlev verilecek, mainactivity ye gidilecek. (DONE)

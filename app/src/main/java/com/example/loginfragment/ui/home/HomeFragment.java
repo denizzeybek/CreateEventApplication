@@ -120,4 +120,3 @@ public class HomeFragment extends Fragment {
 }
 
 
-//TODO: bir tane sıralama yapmak için menu eklenecek
