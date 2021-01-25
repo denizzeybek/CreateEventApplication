@@ -3,20 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginBottom="10dp"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:layout_height="match_parent"
+        android:background="@drawable/background2"
+        android:alpha="0.9"
         tools:context=".ui.event.EventFragment">
 
         <ImageView
             android:id="@+id/uploadImage"
             android:layout_width="130dp"
             android:layout_height="160dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/background2"
+            android:alpha="0.8"
             android:clickable="true"
             android:onClick="selectImage"
             android:layout_marginTop="10dp"
@@ -33,6 +34,7 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Etkinlik Adı"
+            android:textColorHint="#000000"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
@@ -45,6 +47,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
             android:ems="10"
+            android:textColorHint="#000000"
             android:inputType="textPersonName"
             android:hint="Açıklama"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +60,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
             android:ems="10"
+            android:textColorHint="#000000"
             android:inputType="textPersonName"
             android:hint="Konum Bilgileri"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +75,7 @@
             android:ems="10"
             android:inputType="datetime"
             android:hint="Etkinlik Tarihi"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +89,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Şartlar"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventDateText" />
@@ -96,6 +102,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="İletişim Bilgileri"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/conditionsText" />

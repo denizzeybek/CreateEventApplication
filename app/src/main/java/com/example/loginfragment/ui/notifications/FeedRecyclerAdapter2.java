@@ -15,7 +15,9 @@ import com.example.loginfragment.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
+/**
+ * Created by Deniz ZEYBEK
+ */
 public class FeedRecyclerAdapter2 extends RecyclerView.Adapter<FeedRecyclerAdapter2.Holder>  {
 
     private ArrayList<String> userEmailList;

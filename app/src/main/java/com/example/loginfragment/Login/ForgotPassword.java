@@ -21,7 +21,9 @@ import com.example.loginfragment.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-
+/**
+ * Created by Deniz ZEYBEK
+ */
 
 public class ForgotPassword extends Fragment {
     EditText inputEmail;

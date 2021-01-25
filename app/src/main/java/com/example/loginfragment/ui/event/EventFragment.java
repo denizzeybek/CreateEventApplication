@@ -57,7 +57,9 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
-
+/**
+ * Murat YILMAZ
+ */
 public class EventFragment extends Fragment {
 
     EditText eventNameText;

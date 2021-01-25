@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:alpha="0.9"
+    android:background="@drawable/background2"
+    >
 
     <ImageView
         android:id="@+id/recyclerview_image"
         android:layout_width="match_parent"
         android:layout_height="174dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ic_calendar_background"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_calendar_background" />
 
     <TextView
         android:id="@+id/recyclerview_eventNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textAlignment="center"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:text="eventName" />
+        android:text="eventName"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_image" />
 
     <TextView
         android:id="@+id/recyclerview_locationNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textAlignment="center"
         android:paddingTop="5dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="5dp"
-        android:text="locationName" />
+        android:text="locationName"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_eventNameText" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

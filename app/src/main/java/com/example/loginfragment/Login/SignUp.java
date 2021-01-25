@@ -25,7 +25,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
+/**
+ * Created by Deniz ZEYBEK
+ */
 
 public class SignUp extends Fragment {
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/background2"
+    android:alpha="0.9"
     android:orientation="vertical"
     tools:context=".ui.profile.ProfileFragment">
 
@@ -24,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kişisel Bilgiler"
+        android:textColor="#000000"
         android:textAlignment="center"
         android:paddingLeft="10dp"
         android:textSize="24dp"/>
@@ -36,43 +38,42 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:layout_marginBottom="15dp"
+        android:textColorHint="#000000"
+        android:hint="Adınızı Girin"
         android:text="Name" />
 
     <EditText
-        android:id="@+id/editPhoneNumberText"
+        android:id="@+id/editEmailText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:ems="10"
-        android:paddingStart="15dp"
+        android:enabled="true"
         android:inputType="phone"
-        android:layout_marginBottom="15dp"
-        android:text="Phone Number" />
-
-    <EditText
-        android:id="@+id/editPasswordText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
         android:paddingStart="15dp"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="15dp"
-        android:text="Password" />
+        android:textColorHint="#000000"
+        android:text="E-Mail" />
 
     <Button
-        android:id="@+id/btn_update_profile"
+        android:id="@+id/btn_profile_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Güncelle" />
+
+    <Button
+        android:id="@+id/btn_reset_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:text="Bilgileri Güncelle"
-        android:textAlignment="center"  />
+        android:layout_marginTop="13dp"
+        android:text="Şifremi Sıfırla"
+        android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="15dp"
-        android:text="Çıkış Yap"
-        android:textColor="#2196F3"
-        android:textSize="20dp"/>
+        android:text="Çıkış Yap" />
+
 </LinearLayout>
 

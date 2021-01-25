@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginBottom="10dp"
+    android:background="@drawable/background2"
+    android:alpha="0.9"
     android:layout_height="match_parent">
 
 
@@ -18,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="EventName"
+        android:textColorHint="#000000"
         android:paddingLeft="10dp"
         android:textStyle="bold"
         android:text=""
@@ -35,6 +37,7 @@
         android:layout_marginTop="15dp"
         android:hint="EventCreator"
         android:paddingLeft="10dp"
+        android:textColorHint="#000000"
         android:text=""
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -53,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="EventLocation"
+        android:textColorHint="#000000"
         android:textSize="24sp"
         android:paddingLeft="10dp" />
 
@@ -64,6 +68,7 @@
         android:paddingLeft="10dp"
         android:text="Etkinlik Hakkında Bilgiler"
         android:textAlignment="center"
+        android:textColorHint="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
     <TextView
@@ -72,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:hint="EventDate"
+        android:textColorHint="#000000"
         android:textSize="24sp"
         android:paddingLeft="10dp" />
     <TextView
@@ -80,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="EventDetails"
+        android:textColorHint="#000000"
         android:textSize="24sp"
         android:paddingLeft="10dp" />
 

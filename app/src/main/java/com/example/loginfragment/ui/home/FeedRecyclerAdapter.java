@@ -18,7 +18,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.UUID;
-
+/**
+ * Created by Murat YILMAZ
+ */
 public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapter.PostHolder> {
 
     private ArrayList<String> eventNameList;
@@ -44,8 +46,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull PostHolder holder, final int position) {
 
-        holder.eventNameText.setText(eventNameList.get(position));
-        holder.locationText.setText(eventLocationList.get(position));
+        holder.eventNameText.setText("Event : " + eventNameList.get(position));
+        holder.locationText.setText("Konum : " + eventLocationList.get(position));
         Picasso.get().load(eventImageList.get(position)).into(holder.imageView);
 
         // click denemese

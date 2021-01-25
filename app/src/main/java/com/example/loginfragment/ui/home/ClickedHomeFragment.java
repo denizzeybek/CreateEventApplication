@@ -35,7 +35,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static android.content.ContentValues.TAG;
-
+/**
+ * Created by Murat YILMAZ
+ */
 public class ClickedHomeFragment extends Fragment {
     TextView EventNameText;
     TextView EventCreatorText;
@@ -165,7 +167,7 @@ public class ClickedHomeFragment extends Fragment {
 
     public void joinEvent(View view){
         Toast.makeText(getContext(),"Katılma talebi yollandı", Toast.LENGTH_LONG).show();
-        String id = collectionReference.getId();
+/*        String id = collectionReference.getId();
         DocumentReference washingtonRef = firebaseFirestore.collection("Events").document(id);
         System.out.println("washingtonRef :" + washingtonRef);
 // Set the "isCapital" field of the city 'DC'
@@ -184,7 +186,7 @@ public class ClickedHomeFragment extends Fragment {
                         System.out.println("hata : " + e);
                         Log.w(TAG, "Error updating document", e);
                     }
-                });
+                });*/
     }
 }
 
