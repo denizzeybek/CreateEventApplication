@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "101682620310",
-    "project_id": "createeventapplication-7d2b0",
-    "storage_bucket": "createeventapplication-7d2b0.appspot.com"
+    "project_number": "328886525869",
+    "project_id": "createeventapplication2",
+    "storage_bucket": "createeventapplication2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:101682620310:android:e8853214b6f45949cadfb7",
+        "mobilesdk_app_id": "1:328886525869:android:e3e36fb282372525ea8b24",
         "android_client_info": {
           "package_name": "com.example.loginfragment"
         }
       },
       "oauth_client": [
         {
-          "client_id": "101682620310-908g9o3brthi57u2ijs95424m0q51rpd.apps.googleusercontent.com",
+          "client_id": "328886525869-32dfgk3tv73o4r8fhlqvc363ann45ka4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDxSUq9KEndHmpTWbfeV2w2pDlGAHg8Rr0"
+          "current_key": "AIzaSyARM-W9fW-DSbP50_xeRHBDn9taSEE8s7w"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "101682620310-908g9o3brthi57u2ijs95424m0q51rpd.apps.googleusercontent.com",
+              "client_id": "328886525869-32dfgk3tv73o4r8fhlqvc363ann45ka4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
